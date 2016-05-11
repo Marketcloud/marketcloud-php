@@ -1,4 +1,4 @@
-# marketcloud-node
+# marketcloud-php
 Marketcloud API official php client library
 
 ## Installation
