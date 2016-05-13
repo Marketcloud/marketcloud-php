@@ -12,8 +12,8 @@ class Marketcloud
 
 
     // @var string The base URL for the Marketcloud API.
-    //public static $apiBaseUrl = 'http://api.marketcloud.it/v0';
-    public static $apiBaseUrl = 'http://localhost:5000/v0';
+    public static $apiBaseUrl = 'http://api.marketcloud.it/v0';
+    
     
     
 
@@ -90,14 +90,26 @@ class Marketcloud
             'secretKey' => $hashed_secret,
             'timestamp' => $timestamp
         );
-        var_dump($payload);
-        echo "Invio la richiesta di autenticazione";
+        
+        //Sending the auth request
         $response = \Httpful\Request::post($url)
                 ->sendsJson()
                 ->body($payload) 
                 ->send();
-        echo json_encode( (array)$response->body );
+
+
+        if ($response->code >= 400 && $response->code < 500) {
+            throw new Exception('Marketcloud authentication failed. Check credentials.');
+        }
+
+        if ($response->code >= 500) {
+            throw new Exception('Marketcloud authentication failed due to a server error.');
+        }
+
+        //Storing the accessToken
         self::$access_token = $response->body->token;
+
+        //Returning the access token
         return $response->body->token;
 
     }

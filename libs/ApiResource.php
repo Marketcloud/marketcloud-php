@@ -4,37 +4,94 @@ namespace Marketcloud;
 
 
 abstract class ApiResource {
+
+	// This will keep record of how many retries we make
+	private static $retries = 0;
 	
 	public static function _POST($url,$body = '{}') {
-		$url = \Marketcloud\Marketcloud::$apiBaseUrl.$url;
-		return \Httpful\Request::post($url)
+
+		$real_url = \Marketcloud\Marketcloud::$apiBaseUrl.$url;
+
+
+		$response = \Httpful\Request::post($real_url)
 			    ->sendsJson()
 			    ->body($body)
 			    ->addHeader('Authorization', \Marketcloud\Marketcloud::getAuthorizationHeader())   
 			    ->send();
 
+		// We check the response code
+		// If the code is 401, then the Token might be expired.
+		// If it is the case, we re-authenticate the client using the stored credentials.
+		// 
+		// We also keep count of how many retries we make
+		// in order to prevent a loopy mess.
+		if ($response->code == 401) {
+			echo "Re-authenticating....\n";
+			// We have to re-authenticate
+			$auth_response = \Marketcloud\Marketcloud::authenticate();
+			return self::_POST($url,$body);
+		} else {
+			return $response;
+		}
+		
+
 	}
 	public static function _GET($url,$params = null) {
-		$url = \Marketcloud\Marketcloud::$apiBaseUrl.$url;
+		$real_url = \Marketcloud\Marketcloud::$apiBaseUrl.$url;
 
 		if (!is_null($params)) {
 			$query_string = http_build_query($params);
-			$url = $url.'?'.$query_string;
+			$real_url = $real_url.'?'.$query_string;
 		}
 
-		return \Httpful\Request::get($url)
-			    ->expectsJson()
-			    ->addHeader('Authorization', \Marketcloud\Marketcloud::getAuthorizationHeader())   
-			    ->send();
+		$response = \Httpful\Request::get($real_url)
+			  ->expectsJson()
+			  ->addHeader('Authorization', \Marketcloud\Marketcloud::getAuthorizationHeader())   
+			  ->send();
+	    
+
+	    // We check the response code
+		// If the code is 401, then the Token might be expired.
+		// If it is the case, we re-authenticate the client using the stored credentials.
+		// 
+		// We also keep count of how many retries we make
+		// in order to prevent a loopy mess.
+		if ($response->code == 401) {
+			echo "Re-authenticating....\n";
+			// We have to re-authenticate
+			$auth_response = \Marketcloud\Marketcloud::authenticate();
+			return self::_GET($url,$params);
+		} else {
+			return $response;
+		}
 	}
 	public static function _PUT($url,$body = '{}') {
-		$url = \Marketcloud\Marketcloud::$apiBaseUrl.$url;
-		return \Httpful\Request::put($url)
-			    ->sendsJson()
-			    ->addHeader('Authorization', \Marketcloud\Marketcloud::getAuthorizationHeader())   
-			    ->send();
+		$real_url = \Marketcloud\Marketcloud::$apiBaseUrl.$url;
+		$response = \Httpful\Request::put($real_url)
+			  ->sendsJson()
+			  ->addHeader('Authorization', \Marketcloud\Marketcloud::getAuthorizationHeader())   
+			  ->send();
+
+		// We check the response code
+		// If the code is 401, then the Token might be expired.
+		// If it is the case, we re-authenticate the client using the stored credentials.
+		// 
+		// We also keep count of how many retries we make
+		// in order to prevent a loopy mess.
+		if ($response->code == 401) {
+			echo "Re-authenticating....\n";
+			// We have to re-authenticate
+			$auth_response = \Marketcloud\Marketcloud::authenticate();
+			return self::_PUT($url,$body);
+		} else {
+			return $response;
+		}
 
 	}
+
+
+
+
 	public static function _DELETE() {
 
 	}
