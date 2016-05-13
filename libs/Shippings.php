@@ -6,8 +6,8 @@ namespace Marketcloud;
 
 class Shippings extends ApiResource {
 	
-	public static function get() {
-		return parent::_GET("/shippings");
+	public static function get($query) {
+		return parent::_GET("/shippings",$query);
 	}
 
 	public static function getById($id) {

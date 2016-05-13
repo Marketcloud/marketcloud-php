@@ -6,8 +6,8 @@ namespace Marketcloud;
 
 class Categories extends ApiResource {
 	
-	public static function get() {
-		return parent::_GET("/categories");
+	public static function get($query) {
+		return parent::_GET("/categories",$query);
 	}
 
 	public static function getById($id) {

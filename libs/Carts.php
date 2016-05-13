@@ -6,8 +6,8 @@ namespace Marketcloud;
 
 class Carts extends ApiResource {
 	
-	public static function get() {
-		return parent::_GET("/carts");
+	public static function get($query) {
+		return parent::_GET("/carts",$query);
 	}
 
 	public static function getById($id) {

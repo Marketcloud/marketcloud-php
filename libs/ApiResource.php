@@ -14,8 +14,14 @@ abstract class ApiResource {
 			    ->send();
 
 	}
-	public static function _GET($url) {
+	public static function _GET($url,$params = null) {
 		$url = \Marketcloud\Marketcloud::$apiBaseUrl.$url;
+
+		if (!is_null($params)) {
+			$query_string = http_build_query($params);
+			$url = $url.'?'.$query_string;
+		}
+
 		return \Httpful\Request::get($url)
 			    ->expectsJson()
 			    ->addHeader('Authorization', \Marketcloud\Marketcloud::getAuthorizationHeader())   
