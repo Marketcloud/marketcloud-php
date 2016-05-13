@@ -1,5 +1,5 @@
 {
-	"name" : "Marketcloud/marketcloud-php",
+	"name" : "marketcloud/marketcloud-php",
 	"description" : "PHP SDK for the Marketcloud api",
     "require": {
         "nategood/httpful": "*"
