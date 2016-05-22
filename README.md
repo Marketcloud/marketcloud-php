@@ -7,7 +7,7 @@ composer install marketcloud
 ```
 
 ## Documentation
-The official documentation is available at http://www.marketcloud.it/documentation/php
+The official documentation will be available soon at http://www.marketcloud.it/documentation
 
 ## API overview
 You can interact with the api through a Marketcloud 
