@@ -1,9 +1,10 @@
 # marketcloud-php
 Marketcloud API official php client library
 
-## Installation
+## Installation through composer
 ```
-composer install marketcloud
+composer require marketcloud
+composer install
 ```
 
 ## Documentation
