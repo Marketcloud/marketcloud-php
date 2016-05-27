@@ -21,6 +21,10 @@ class Categories extends ApiResource {
 	public static function update($id,$data) {
 		return parent::_PUT("/categories/".$id,$data);
 	}
+
+	public static function delete($id) {
+		return parent::_DELETE("/categories/".$id);
+	}
 }
 
 ?>

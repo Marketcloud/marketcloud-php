@@ -21,6 +21,10 @@ class Brands extends ApiResource {
 	public static function update($id,$data) {
 		return parent::_PUT("/brands/".$id,$data);
 	}
+
+	public static function delete($id) {
+		return parent::_DELETE("/brands/".$id);
+	}
 }
 
 ?>

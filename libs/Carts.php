@@ -18,6 +18,10 @@ class Carts extends ApiResource {
 		return parent::_POST("/carts",$data);
 	}
 
+	public static function delete($id) {
+		return parent::_DELETE("/carts/".$id);
+	}
+
 	public static function update($id,$items) {
 		$payload  = array(
 				'op' => 'update',

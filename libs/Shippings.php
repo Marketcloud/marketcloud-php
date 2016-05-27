@@ -21,6 +21,10 @@ class Shippings extends ApiResource {
 	public static function update($id,$data) {
 		return parent::_PUT("/shippings/".$id,$data);
 	}
+
+	public static function delete($id) {
+		return parent::_DELETE("/shippings/".$id);
+	}
 }
 
 ?>
