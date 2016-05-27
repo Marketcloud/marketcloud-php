@@ -11,5 +11,10 @@
     "require": {
     	 "php": ">=5.3.3",
         "nategood/httpful": "*"
-    }
+    },
+    "extra": {
+	    "branch-alias": {
+	      "dev-master": "1.0"
+	    }
+	}
 }
