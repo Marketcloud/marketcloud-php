@@ -91,6 +91,7 @@ class Marketcloud
             'timestamp' => $timestamp
         );
         
+        
         //Sending the auth request
         $response = \Httpful\Request::post($url)
                 ->sendsJson()
@@ -99,13 +100,12 @@ class Marketcloud
 
 
         if ($response->code >= 400 && $response->code < 500) {
-            throw new Exception('Marketcloud authentication failed. Check credentials.');
+            throw new \Exception('Marketcloud authentication failed. Check credentials.');
         }
 
         if ($response->code >= 500) {
-            throw new Exception('Marketcloud authentication failed due to a server error.');
+            throw new \Exception('Marketcloud authentication failed due to a server error.');
         }
-
         //Storing the accessToken
         self::$access_token = $response->body->token;
 
