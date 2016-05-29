@@ -23,7 +23,7 @@ class Users extends ApiResource {
 	}
 
 	public static function authenticate($email,$password) {
-		var $data = array(
+		$data = array(
 			"email" => $email,
 			"password" => $password
 		);
