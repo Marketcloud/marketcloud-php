@@ -1,8 +1,6 @@
 <?php
 
 
-// Plumbing
-require(dirname(__FILE__) .'/vendor/autoload.php');
 include(dirname(__FILE__) . '/libs/ApiResource.php');
 // Marketcloud singleton
 include(dirname(__FILE__) . '/libs/Marketcloud.php');
