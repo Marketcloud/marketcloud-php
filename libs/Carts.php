@@ -25,7 +25,7 @@ class Carts extends ApiResource {
 	public static function update($id,$items) {
 		$payload  = array(
 				'op' => 'update',
-				'items' => $data
+				'items' => $items
 
 		 );
 		return parent::_PATCH("/carts/".$id,$payload);
@@ -34,7 +34,7 @@ class Carts extends ApiResource {
 	public static function remove($id,$items) {
 		$payload  = array(
 				'op' => 'remove',
-				'items' => $data
+				'items' => $items
 
 		 );
 		return parent::_PATCH("/carts/".$id,$payload);
@@ -43,7 +43,7 @@ class Carts extends ApiResource {
 	public static function add($id,$items) {
 		$payload  = array(
 				'op' => 'add',
-				'items' => $data
+				'items' => $items
 
 		 );
 		return parent::_PATCH("/carts/".$id,$payload);
