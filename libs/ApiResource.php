@@ -27,8 +27,7 @@ abstract class ApiResource {
 		// If the code is 401, then the Token might be expired.
 		// If it is the case, we re-authenticate the client using the stored credentials.
 		// 
-		// We also keep count of how many retries we make
-		// in order to prevent a loopy mess.
+		
 		if ($response->code == 401) {
 
 			// We have to re-authenticate
@@ -58,8 +57,7 @@ abstract class ApiResource {
 		// If the code is 401, then the Token might be expired.
 		// If it is the case, we re-authenticate the client using the stored credentials.
 		// 
-		// We also keep count of how many retries we make
-		// in order to prevent a loopy mess.
+		
 		if ($response->code == 401) {
 			// We have to re-authenticate
 			$auth_response = \Marketcloud\Marketcloud::authenticate();
@@ -80,8 +78,7 @@ abstract class ApiResource {
 		// If the code is 401, then the Token might be expired.
 		// If it is the case, we re-authenticate the client using the stored credentials.
 		// 
-		// We also keep count of how many retries we make
-		// in order to prevent a loopy mess.
+		
 		if ($response->code == 401) {
 			// We have to re-authenticate
 			$auth_response = \Marketcloud\Marketcloud::authenticate();
@@ -105,8 +102,7 @@ abstract class ApiResource {
 		// If the code is 401, then the Token might be expired.
 		// If it is the case, we re-authenticate the client using the stored credentials.
 		// 
-		// We also keep count of how many retries we make
-		// in order to prevent a loopy mess.
+		
 		if ($response->code == 401) {
 			// We have to re-authenticate
 			$auth_response = \Marketcloud\Marketcloud::authenticate();
@@ -134,8 +130,7 @@ abstract class ApiResource {
 		// If the code is 401, then the Token might be expired.
 		// If it is the case, we re-authenticate the client using the stored credentials.
 		// 
-		// We also keep count of how many retries we make
-		// in order to prevent a loopy mess.
+		
 		if ($response->code == 401) {
 			// We have to re-authenticate
 			$auth_response = \Marketcloud\Marketcloud::authenticate();
