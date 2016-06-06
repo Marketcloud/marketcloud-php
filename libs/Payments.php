@@ -18,6 +18,9 @@ class Payments extends ApiResource {
 		return parent::_POST("/payments",$data);
 	}
 
+
+	
+
 	
 }
 
