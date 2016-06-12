@@ -1,5 +1,5 @@
 # marketcloud-php
-Marketcloud API official php client library
+Marketcloud API official PHP client library
 
 ## Installation with Composer
 ```
