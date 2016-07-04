@@ -13,6 +13,7 @@ include(dirname(__FILE__) . '/libs/Marketcloud.php');
 include(dirname(__FILE__) . '/libs/Products.php');
 include(dirname(__FILE__) . '/libs/Categories.php');
 include(dirname(__FILE__) . '/libs/Brands.php');
+include(dirname(__FILE__) . '/libs/Orders.php');
 include(dirname(__FILE__) . '/libs/Shippings.php');
 include(dirname(__FILE__) . '/libs/Payments.php');
 include(dirname(__FILE__) . '/libs/BraintreePayments.php');
