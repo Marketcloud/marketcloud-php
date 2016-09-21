@@ -6,7 +6,7 @@ namespace Marketcloud;
 
 class Shippings extends ApiResource {
 	
-	public static function get($query) {
+	public static function get($query = array()) {
 		return parent::_GET("/shippings",$query);
 	}
 

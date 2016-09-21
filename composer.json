@@ -10,7 +10,7 @@
 	"minimum-stability": "dev",
     "require": {
     	 "php": ">=5.3.3",
-        "nategood/httpful": "*"
+        "nategood/httpful": "^0.2.20"
     },
     "extra": {
         "branch-alias": {

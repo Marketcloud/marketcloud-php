@@ -10,6 +10,7 @@ include(dirname(__FILE__) . '/libs/Marketcloud.php');
 
 
 // Marketcloud API Resources
+include(dirname(__FILE__) . '/libs/Application.php');
 include(dirname(__FILE__) . '/libs/Products.php');
 include(dirname(__FILE__) . '/libs/Categories.php');
 include(dirname(__FILE__) . '/libs/Brands.php');
