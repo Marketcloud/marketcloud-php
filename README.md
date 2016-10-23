@@ -28,7 +28,7 @@ Marketcloud\Marketcloud::setCredentials(array(
 ```
 Every resource method, returns json data:
 ```php
-$products = Marketcloud\Products::get();
+$response = Marketcloud\Products::get();
 
 echo json_encode( (array)$response->body )
 ```
