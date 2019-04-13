@@ -51,7 +51,15 @@ class Marketcloud
         self::$public_key = $credentials["public_key"];
         self::$secret_key = $credentials["secret_key"];
     }
-
+    /**
+     * Sets the ApiBaseUrl.
+     *
+     * @param string $apiBaseUrl
+     */
+    public static function setApiBaseUrl($apiBaseUrl)
+    {
+        self::$apiBaseUrl = $apiBaseUrl;
+    }
     /**
      * Sets the access_token. Internally applies stripcslashes to the string parameter.
      *
