@@ -12,10 +12,10 @@ class Marketcloud
 
 
     // @var string The base URL for the Marketcloud API.
-    public static $apiBaseUrl = 'http://api.marketcloud.it/v0';
-    
-    
-    
+    public static $apiBaseUrl = 'https://api.marketcloud.studio404.net/v0';
+
+
+
 
     // @var string|null The version of the Marketcloud API to use for requests.
     public static $apiVersion = null;
@@ -88,7 +88,7 @@ class Marketcloud
 
     public static function authenticate()
     {
-        
+
         $timestamp = round(microtime(true) * 1000);
         $hashed_secret = base64_encode( hash('sha256',self::$secret_key.$timestamp,true) );
         $url = self::$apiBaseUrl."/tokens";
@@ -98,12 +98,12 @@ class Marketcloud
             'secretKey' => $hashed_secret,
             'timestamp' => $timestamp
         );
-        
-        
+
+
         //Sending the auth request
         $response = \Httpful\Request::post($url)
                 ->sendsJson()
-                ->body($payload) 
+                ->body($payload)
                 ->send();
 
 
@@ -121,6 +121,6 @@ class Marketcloud
         return $response->body->token;
 
     }
-   
-   
+
+
 }
