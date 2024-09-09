@@ -1,32 +1,31 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "hash": "ea6d1c329fabf6170ea86dcbb62c5206",
-    "content-hash": "641a7f5b13aad8d3c579e6603d9a5263",
+    "content-hash": "ead6d7ee6523a720ef94e96149d4cb4a",
     "packages": [
         {
             "name": "nategood/httpful",
-            "version": "0.2.20",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nategood/httpful.git",
-                "reference": "c1cd4d46a4b281229032cf39d4dd852f9887c0f6"
+                "reference": "ea02c8aedef70b9a453ce97978d9d7c413972f15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nategood/httpful/zipball/c1cd4d46a4b281229032cf39d4dd852f9887c0f6",
-                "reference": "c1cd4d46a4b281229032cf39d4dd852f9887c0f6",
+                "url": "https://api.github.com/repos/nategood/httpful/zipball/ea02c8aedef70b9a453ce97978d9d7c413972f15",
+                "reference": "ea02c8aedef70b9a453ce97978d9d7c413972f15",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
-                "php": ">=5.3"
+                "php": ">=8.1"
             },
             "require-dev": {
-                "phpunit/phpunit": "*"
+                "phpunit/phpunit": "^10.5"
             },
             "type": "library",
             "autoload": {
@@ -55,7 +54,11 @@
                 "rest",
                 "restful"
             ],
-            "time": "2015-10-26 16:11:30"
+            "support": {
+                "issues": "https://github.com/nategood/httpful/issues",
+                "source": "https://github.com/nategood/httpful/tree/v1.0.0"
+            },
+            "time": "2024-05-01T11:33:16+00:00"
         }
     ],
     "packages-dev": [],
@@ -67,5 +70,6 @@
     "platform": {
         "php": ">=5.3.3"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
 }
